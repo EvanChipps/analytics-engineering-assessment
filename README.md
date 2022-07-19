@@ -14,11 +14,13 @@ allow you to make progress even without `dbt` experience.
 
 ## Getting Started
 
-This repository is a template repository - please clone it to your personal
-GitHub and add your @statype contact as an external contributor.  You may do
-this initially or after you've spent your 2-3h (3 hours absolutely maximum
-please - we would rather an unpolished working solution after 2 hours than an
-incredibly polished and "perfect" solution after 10.)
+Fork this repository into a private repository in your own Github account.
+Invite `dave@statype.com` as a collaborator so I can view your worker later.
+Do this as you are beginning your work though this does not "start the clock"
+on your actual work - please take the best 2-3h of your time to work as you
+can.  3 hours should be an absolute maximum please - we would rather an
+unpolished working solution after 2 hours than an incredibly polished and
+"perfect" solution after 10.
 
 ### With a devcontainer
 
