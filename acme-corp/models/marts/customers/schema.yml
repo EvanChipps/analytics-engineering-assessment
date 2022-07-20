@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: customer_activity_daily
+    description: '{{ doc("customer_activity_daily") }}'
+    columns:
+      - name: period
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: orders_past_7_days
+        tests:
+          - not_negative
+      - name: orders_past_30_days
+        tests:
+          - not_negative
+      - name: orders_past_60_days
+        tests:
+          - not_negative
+      - name: orders_past_90_days
+        tests:
+          - not_negative
+      - name: is_active
+      - name: is_churned_recent
+      - name: is_churned_historic
+
+  - name: customer_daily_snapshot
+    description: '{{ doc("customer_activity_daily")}}'
+    columns:
+      - name: period
+        tests:
+          - unique
+          - not_null
+      - name: total_customers
+        tests:
+          - not_null
+      - name: active_customers
+        tests:
+          - not_negative
+          - not_greater_than:
+              comparison_field: total_customers
+      - name: recently_churned_customers
+        tests:
+          - not_negative
+          - not_greater_than:
+              comparison_field: total_customers
+      - name: total_churned_customers
+        tests:
+          - not_negative
+          - not_greater_than:
+              comparison_field: total_customers
+      - name: churn_rate 
+
+    
